@@ -1,0 +1,28 @@
+SANITY effects-off equality: PASS
+SANITY B bounded: PASS
+SANITY order conservation: PASS
+SANITY conversation symmetry/accounting: PASS
+SANITY same seed reproducible: PASS
+
+Expected utilisation by hour (before boredom):
+ hour  orders_per_hour expected_utilisation
+    1             22.0                30.3%
+    2             34.0                46.8%
+    3             50.0                68.8%
+    4             64.0                88.1%
+    5             60.0                82.5%
+    6             36.0                49.5%
+    7             26.0                35.8%
+    8             20.0                27.5%
+
+Scenario means:
+   scenario  team_picks_per_hour  error_rate  conversation_minutes  mean_flow_time  unfinished  mean_b  capacity_cost  paid_time_cost
+   baseline              174.012       0.007                 0.000           7.198         1.9   0.000        329.681           0.000
+direct_only              173.725       0.014                26.529           8.338         2.4   0.312        544.622          92.397
+       full              173.725       0.015                49.472           8.498         2.4   0.322        555.588         105.576
+
+Loss decomposition, mean +/- 95% CI:
+ direct_loss_mean  direct_loss_ci95  indirect_loss_mean  indirect_loss_ci95  total_loss_mean  total_loss_ci95  spillover_ratio_mean  spillover_ratio_ci95
+          214.941            25.734              10.966              11.651          225.907           32.965                 0.039                 0.046
+
+Saved CSV and PNG outputs to: /mnt/data/boredom_sim_中文版交付包/运行结果_快速模式
